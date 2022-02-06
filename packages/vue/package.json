@@ -1,6 +1,6 @@
 {
   "name": "@tomorrow-catcher/vue",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -23,8 +23,8 @@
     }
   ],
   "dependencies": {
-    "@tomorrow-catcher/browser": "workspace:^0.0.0",
-    "@tomorrow-catcher/vue": "workspace:^0.0.0",
+    "@tomorrow-catcher/browser": "workspace:^1.0.0",
+    "@tomorrow-catcher/vue": "workspace:^1.0.0",
     "vue": "^3.2.28",
     "vue-demi": "^0.12.1",
     "vue-router": "^4.0.12",
