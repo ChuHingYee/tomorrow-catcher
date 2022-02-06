@@ -1,0 +1,36 @@
+{
+  "name": "@tomorrow-catcher/client",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.4.0",
+    "babel-jest": "^27.4.6",
+    "jest": "^27.4.7"
+  },
+  "rollup": [
+    {
+      "type": "iife",
+      "name": "Tomorrow"
+    },
+    {
+      "type": "esm"
+    },
+    {
+      "type": "type"
+    }
+  ],
+  "scripts": {
+    "test": "jest"
+  }
+}

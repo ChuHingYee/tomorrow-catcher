@@ -1,0 +1,43 @@
+{
+  "name": "@tomorrow-catcher/browser",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@tomorrow-catcher/client": "workspace:^0.0.0",
+    "tracekit": "^0.4.6"
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.4.0",
+    "babel-jest": "^27.4.6",
+    "fake-indexeddb": "^3.1.7",
+    "jest": "^27.4.7",
+    "shelving-mock-indexeddb": "^1.1.0"
+  },
+  "rollup": [
+    {
+      "type": "iife",
+      "name": "TomorrowBrowser"
+    },
+    {
+      "type": "esm"
+    },
+    {
+      "type": "type"
+    }
+  ],
+  "scripts": {
+    "test": "jest"
+  }
+}

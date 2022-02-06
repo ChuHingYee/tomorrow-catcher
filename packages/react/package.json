@@ -1,0 +1,30 @@
+{
+  "name": "@tomorrow-catcher/react",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "rollup": [
+    {
+      "type": "iife",
+      "name": "TomorrowReact"
+    },
+    {
+      "type": "esm"
+    },
+    {
+      "type": "type"
+    }
+  ],
+  "dependencies": {
+    "@tomorrow-catcher/browser": "workspace:^0.0.0",
+    "@types/react": "^17.0.38",
+    "react": "^17.0.2"
+  }
+}

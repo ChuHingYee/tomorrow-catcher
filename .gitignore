@@ -1,0 +1,12 @@
+# Editor directories and files
+.idea
+
+# Package Manager
+node_modules
+.pnpm-debug.log*
+packages/*/dist
+docs/.vitepress/dist
+coverage
+
+# System
+.DS_Store
