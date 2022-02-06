@@ -1,4 +1,4 @@
-# @tomorrow-catcher/client
+# @tomorrow-catcher/browser
 
 the browser'SDK of the tomorrow-catcher'SDK
 
