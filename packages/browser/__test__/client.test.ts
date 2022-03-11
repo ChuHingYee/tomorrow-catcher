@@ -7,7 +7,7 @@ import { initOnErrorHandler } from '../src/handlers/errorHandler'
 import { initOnUnhandledrejectionHandler } from '../src/handlers/unhandledrejectionHandler'
 import { initFetchHandler } from '../src/handlers/fetchHandler'
 import { initXMLHandler } from '../src/handlers/xmlHandler'
-import { key, expireDate, reportUrl, sdkVersion } from './constants'
+import { key, expireDate, reportUrl, sdkVersion, trackDepth } from './constants'
 describe('Init TomorrowBrowser', () => {
   it('Init success', () => {
     const tomorrowBrowser = new TomorrowBrowser({
@@ -15,6 +15,7 @@ describe('Init TomorrowBrowser', () => {
       reportUrl,
       expireDate,
       sdkVersion,
+      trackDepth,
       handlersList: ['error', 'unhandledrejection', 'fetch', 'xhr'],
     })
     expect(initOnErrorHandler).toHaveBeenCalled()
@@ -24,6 +25,7 @@ describe('Init TomorrowBrowser', () => {
     expect(tomorrowBrowser._tomorrow._key).toEqual(key)
     expect(tomorrowBrowser._tomorrow._expireDate).toEqual(0)
     expect(tomorrowBrowser._store).toEqual(null)
+    expect(tomorrowBrowser._trackDepth).toEqual(2)
   })
   it('Singleton Pattern', () => {
     const tomorrowBrowserA = new TomorrowBrowser({

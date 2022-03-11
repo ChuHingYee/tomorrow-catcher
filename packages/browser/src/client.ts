@@ -13,9 +13,10 @@ const _version = `${pkg.name}-${pkg.version}`
 class TomorrowBrowser {
   _tomorrow: Tomorrow
   _store: Store | null
+  _trackDepth: number
   private static instance: TomorrowBrowser
   constructor(config: BrowserConfig) {
-    const { handlersList, sdkVersion, ...rest } = config
+    const { handlersList, sdkVersion, trackDepth, ...rest } = config
     this._tomorrow = new Tomorrow({
       ...rest,
       systemInfo: {
@@ -31,6 +32,7 @@ class TomorrowBrowser {
     } else {
       this._store = new Store(this)
     }
+    this._trackDepth = trackDepth || 0
     if (handlersList && handlersList.length > 0) {
       initHandlers(this, handlersList)
     }
@@ -66,6 +68,9 @@ class TomorrowBrowser {
   }
   emitTraceEvent(err: Error, customInfo?: OriginLog['customInfo']): void {
     const trace = TraceKit.computeStackTrace(err)
+    if (this._trackDepth !== 0 && trace.stack.length) {
+      trace.stack = trace.stack.splice(0, this._trackDepth)
+    }
     const _time = Date.now()
     const log: OriginLog = {
       time: _time,

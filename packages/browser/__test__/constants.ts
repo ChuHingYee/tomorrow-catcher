@@ -12,3 +12,4 @@ export const key = 'TEST_KEY'
 export const expireDate = 0
 export const reportUrl = 'TEST_REPORT_URL'
 export const sdkVersion = `${pkg.name}-${pkg.version}`
+export const trackDepth = 2

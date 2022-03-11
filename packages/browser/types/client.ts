@@ -26,6 +26,7 @@ export interface BrowserConfig {
   key: string
   expireDate: number
   reportUrl: string
-  handlersList?: Handlers[]
   sdkVersion: string
+  trackDepth?: number
+  handlersList?: Handlers[]
 }
