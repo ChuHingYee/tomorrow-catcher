@@ -7,15 +7,14 @@ import { initOnErrorHandler } from '../src/handlers/errorHandler'
 import { initOnUnhandledrejectionHandler } from '../src/handlers/unhandledrejectionHandler'
 import { initFetchHandler } from '../src/handlers/fetchHandler'
 import { initXMLHandler } from '../src/handlers/xmlHandler'
-import { key, expireTime, reportUrl, version, sdkInfo } from './constants'
+import { key, expireDate, reportUrl, sdkVersion } from './constants'
 describe('Init TomorrowBrowser', () => {
   it('Init success', () => {
     const tomorrowBrowser = new TomorrowBrowser({
       key,
-      type: 'delay',
       reportUrl,
-      expireTime,
-      sdkInfo,
+      expireDate,
+      sdkVersion,
       handlersList: ['error', 'unhandledrejection', 'fetch', 'xhr'],
     })
     expect(initOnErrorHandler).toHaveBeenCalled()
@@ -23,25 +22,21 @@ describe('Init TomorrowBrowser', () => {
     expect(initFetchHandler).toHaveBeenCalled()
     expect(initXMLHandler).toHaveBeenCalled()
     expect(tomorrowBrowser._tomorrow._key).toEqual(key)
-    expect(tomorrowBrowser._tomorrow._type).toEqual('delay')
-    expect(tomorrowBrowser._tomorrow._expireTime).toEqual(expireTime * 86400000)
-    expect(tomorrowBrowser._sdkInfo.version).toEqual(version)
-    expect(tomorrowBrowser._sdkInfo.type).toEqual(sdkInfo.type)
+    expect(tomorrowBrowser._tomorrow._expireDate).toEqual(0)
+    expect(tomorrowBrowser._store).toEqual(null)
   })
   it('Singleton Pattern', () => {
     const tomorrowBrowserA = new TomorrowBrowser({
       key,
-      type: 'delay',
       reportUrl,
-      sdkInfo,
-      expireTime,
+      sdkVersion,
+      expireDate,
     })
     const tomorrowBrowserB = new TomorrowBrowser({
       key: 'key2',
-      type: 'immediate',
       reportUrl,
-      sdkInfo,
-      expireTime,
+      sdkVersion,
+      expireDate,
     })
     expect(tomorrowBrowserA).toEqual(tomorrowBrowserB)
   })

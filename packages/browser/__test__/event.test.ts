@@ -1,13 +1,12 @@
 import { TomorrowBrowser } from '../src/client'
-import { key, expireTime, reportUrl, log, sdkInfo } from './constants'
+import { key, expireDate, reportUrl, log, sdkVersion } from './constants'
 
 describe('Emit normal event', () => {
   const tomorrowBrowser = new TomorrowBrowser({
     key,
-    type: 'immediate',
     reportUrl,
-    expireTime,
-    sdkInfo,
+    expireDate,
+    sdkVersion,
   })
   it('sendBeacon is exist', () => {
     navigator.sendBeacon = jest.fn().mockReturnValue(true)
@@ -35,11 +34,6 @@ describe('Emit normal event', () => {
       tomorrowBrowser._tomorrow._reportUrl,
       false
     )
-    expect(xhrMock.setRequestHeader).toBeCalledWith(
-      'Content-Type',
-      'application/json;charset=UTF-8'
-    )
-    // expect(xhrMock.send).toBeCalledWith(JSON.stringify(data))
     xhrMock.onreadystatechange(new Event(''))
   })
 })

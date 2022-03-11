@@ -27,9 +27,9 @@ class TomorrowBrowser {
       },
     })
     if (this._tomorrow._expireDate === 0) {
-      this._store = new Store(this)
-    } else {
       this._store = null
+    } else {
+      this._store = new Store(this)
     }
     if (handlersList && handlersList.length > 0) {
       initHandlers(this, handlersList)
