@@ -1,5 +1,12 @@
 # @tomorrow-catcher/vue
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @tomorrow-catcher/browser@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
