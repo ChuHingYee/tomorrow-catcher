@@ -7,7 +7,7 @@ import type { Router } from 'vue-router'
 
 export type ErrorForm = 'errorHandler' | 'router'
 
-export interface VueConfig extends BrowserConfig {
+export interface VueConfig extends Omit<BrowserConfig, 'sdkVersion'> {
   vue: VueConstructor | App
   beforeUpload?: (
     err: any,
