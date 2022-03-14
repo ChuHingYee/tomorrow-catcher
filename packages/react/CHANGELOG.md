@@ -1,5 +1,13 @@
 # @tomorrow-catcher/react
 
+## 1.0.2
+
+### Patch Changes
+
+#### Bugfixes
+
+- fix: fix initial-config wrong (a514853)
+
 ## 1.0.1
 
 ### Patch Changes
