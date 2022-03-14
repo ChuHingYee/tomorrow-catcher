@@ -1,5 +1,13 @@
 # @tomorrow-catcher/vue
 
+## 1.0.2
+
+### Patch Changes
+
+#### Bugfixes
+
+- fix: fix initial-config wrong (3816786)
+
 ## 1.0.1
 
 ### Patch Changes
