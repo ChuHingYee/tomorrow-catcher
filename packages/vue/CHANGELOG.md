@@ -1,5 +1,13 @@
 # @tomorrow-catcher/vue
 
+## 1.0.3
+
+### Patch Changes
+
+#### Bugfixes
+
+- fix: forgot build file when last version!
+
 ## 1.0.2
 
 ### Patch Changes
