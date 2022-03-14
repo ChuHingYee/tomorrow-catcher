@@ -14,9 +14,11 @@ class TomorrowBrowser {
   _tomorrow: Tomorrow
   _store: Store | null
   _trackDepth: number
+  _stackHasContext: boolean
   private static instance: TomorrowBrowser
   constructor(config: BrowserConfig) {
-    const { handlersList, sdkVersion, trackDepth, ...rest } = config
+    const { handlersList, sdkVersion, trackDepth, stackHasContext, ...rest } =
+      config
     this._tomorrow = new Tomorrow({
       ...rest,
       systemInfo: {
@@ -33,6 +35,7 @@ class TomorrowBrowser {
       this._store = new Store(this)
     }
     this._trackDepth = trackDepth || 0
+    this._stackHasContext = stackHasContext || false
     if (handlersList && handlersList.length > 0) {
       initHandlers(this, handlersList)
     }
@@ -70,6 +73,14 @@ class TomorrowBrowser {
     const trace = TraceKit.computeStackTrace(err)
     if (this._trackDepth !== 0 && trace.stack.length) {
       trace.stack = trace.stack.splice(0, this._trackDepth)
+    }
+    if (!this._stackHasContext) {
+      trace.stack = trace.stack.map((item) => {
+        return {
+          ...item,
+          context: [],
+        }
+      })
     }
     const _time = Date.now()
     const log: OriginLog = {

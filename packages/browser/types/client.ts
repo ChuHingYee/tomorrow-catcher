@@ -28,5 +28,6 @@ export interface BrowserConfig {
   reportUrl: string
   sdkVersion: string
   trackDepth?: number
+  stackHasContext?: boolean
   handlersList?: Handlers[]
 }
