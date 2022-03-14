@@ -1,5 +1,13 @@
 # @tomorrow-catcher/browser
 
+## 1.0.2
+
+### Patch Changes
+
+#### Features
+
+- feat: add stackHasContext prop (f218aa8)
+
 ## 1.0.1
 
 ### Patch Changes
