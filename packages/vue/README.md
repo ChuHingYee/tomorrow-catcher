@@ -6,12 +6,20 @@ the vue'SDK of the tomorrow-catcher'SDK
 
 Using npm:
 
-```console
-npm install @tomorrow-catcher/vue
-# or
-yarn add @tomorrow-catcher/vue
-# or
-pnpm add @tomorrow-catcher/vue
+```bash
+$ npm install --save  @tomorrow-catcher/vue
+```
+
+or using yarn:
+
+```bash
+$ yarn add @tomorrow-catcher/vue
+```
+
+or using pnpm:
+
+```bash
+$ pnpm add @tomorrow-catcher/vue
 ```
 
 ## Usage
