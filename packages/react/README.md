@@ -6,12 +6,20 @@ the react'SDK of the tomorrow-catcher'SDK
 
 Using npm:
 
-```console
-npm install @tomorrow-catcher/react
-# or
-yarn add @tomorrow-catcher/react
-# or
-pnpm add @tomorrow-catcher/react
+```bash
+$ npm install --save  @tomorrow-catcher/react
+```
+
+or using yarn:
+
+```bash
+$ yarn add @tomorrow-catcher/react
+```
+
+or using pnpm:
+
+```bash
+$ pnpm add @tomorrow-catcher/react
 ```
 
 ## Usage
