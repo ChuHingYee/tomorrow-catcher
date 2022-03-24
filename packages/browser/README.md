@@ -6,12 +6,20 @@ the browser'SDK of the tomorrow-catcher'SDK
 
 Using npm:
 
-```console
-npm install @tomorrow-catcher/browser
-# or
-yarn add @tomorrow-catcher/browser
-# or
-pnpm add @tomorrow-catcher/browser
+```bash
+$ npm install --save  @tomorrow-catcher/browser
+```
+
+or using yarn:
+
+```bash
+$ yarn add @tomorrow-catcher/browser
+```
+
+or using pnpm:
+
+```bash
+$ pnpm add @tomorrow-catcher/browser
 ```
 
 ## Usage
@@ -43,7 +51,7 @@ the log upload api url.
 
 ### `handlersList`
 
-Type: `'error' | 'unhandledrejection' | 'fetch' | 'xhr'[]`<br>
+Type: `'error' | 'unhandledrejection' | 'fetch' | 'xhr' | 'sourceLoad'[]`<br>
 Default: `[]`
 
 the errors handler options
