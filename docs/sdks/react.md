@@ -2,6 +2,19 @@
 
 基于 react 对 @tomorrow-catcher/browser 的封装
 
+## 安装
+
+```shell
+# 选择一个你喜欢的包管理器
+
+# NPM
+$ npm install @tomorrow-catcher/react
+# Yarn
+$ yarn add @tomorrow-catcher/react
+# pnpm
+$ pnpm add @tomorrow-catcher/react
+```
+
 ## 基本用法
 
 ::: details 点击查看代码

@@ -2,6 +2,19 @@
 
 基于 vue 对 @tomorrow-catcher/browser 的封装
 
+## 安装
+
+```shell
+# 选择一个你喜欢的包管理器
+
+# NPM
+$ npm install @tomorrow-catcher/vue
+# Yarn
+$ yarn add @tomorrow-catcher/vue
+# pnpm
+$ pnpm add @tomorrow-catcher/vue
+```
+
 ## 基础用法
 
 ::: info
