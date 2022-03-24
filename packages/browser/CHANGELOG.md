@@ -1,5 +1,13 @@
 # @tomorrow-catcher/browser
 
+## 1.0.3
+
+### Patch Changes
+
+#### Features
+
+- feat: add source-load-handler (c7bf4cd)
+
 ## 1.0.2
 
 ### Patch Changes
