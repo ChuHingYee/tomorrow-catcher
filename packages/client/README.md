@@ -6,12 +6,20 @@ the base'SDK of the tomorrow-catcher'SDK
 
 Using npm:
 
-```console
-npm install @tomorrow-catcher/client
-# or
-yarn add @tomorrow-catcher/client
-# or
-pnpm add @tomorrow-catcher/client
+```bash
+$ npm install --save  @tomorrow-catcher/client
+```
+
+or using yarn:
+
+```bash
+$ yarn add @tomorrow-catcher/client
+```
+
+or using pnpm:
+
+```bash
+$ pnpm add @tomorrow-catcher/client
 ```
 
 ## Options
