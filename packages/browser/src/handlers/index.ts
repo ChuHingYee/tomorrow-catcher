@@ -1,12 +1,14 @@
-import type { TomorrowBrowser } from '../client'
 import { initOnErrorHandler } from './errorHandler'
 import { initOnUnhandledrejectionHandler } from './unhandledrejectionHandler'
 import { initFetchHandler } from './fetchHandler'
 import { initXMLHandler } from './xmlHandler'
+import { sourceLoadHandler } from './sourceLoadHandler'
+import type { TomorrowBrowser } from '../client'
+import type { Handlers } from '../../types/client'
 
 export function initHandlers(
   instance: TomorrowBrowser,
-  handlersList: string[]
+  handlersList: Handlers[]
 ) {
   handlersList.forEach((type) => {
     switch (type) {
@@ -21,6 +23,9 @@ export function initHandlers(
         break
       case 'xhr':
         initXMLHandler(instance)
+        break
+      case 'sourceLoad':
+        sourceLoadHandler(instance)
         break
       default:
         // eslint-disable-next-line no-console

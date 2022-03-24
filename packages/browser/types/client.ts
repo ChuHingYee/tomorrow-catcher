@@ -20,7 +20,12 @@ export interface TomorrowLogList {
   list: TomorrowLog[]
 }
 
-export type Handlers = 'error' | 'unhandledrejection' | 'fetch' | 'xhr'
+export type Handlers =
+  | 'error'
+  | 'unhandledrejection'
+  | 'fetch'
+  | 'xhr'
+  | 'sourceLoad'
 
 export interface BrowserConfig {
   key: string
