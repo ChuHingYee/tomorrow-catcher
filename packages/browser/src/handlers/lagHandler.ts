@@ -27,10 +27,8 @@ export function initLagHandler(instance: TomorrowBrowser): void {
       if (records.length > 3) {
         instance.emitEvent({
           time: new Date().getTime(),
-          customInfo: {
-            url: window.location.href,
-            type: 'lag',
-          },
+          url: window.location.href,
+          type: 'lag',
         })
         records = []
       }

@@ -19,10 +19,9 @@ export function initFetchHandler(instance: TomorrowBrowser): void {
       const _time = new Date().getTime()
       const customLog: OriginLog = {
         time: _time,
-        customInfo: {
-          type: 'network',
-          msg: `${requestRecord.method}-${requestRecord.url}`,
-        },
+        type: 'network',
+        message: `${requestRecord.method}-${requestRecord.url}`,
+        url: window.location.href,
       }
       oldFetch(input, opts).then(
         (res) => {

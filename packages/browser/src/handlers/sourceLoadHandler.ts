@@ -15,20 +15,18 @@ export function initSourceLoadHandler(instance: TomorrowBrowser): void {
       if (sourcesMap[nodeName]) {
         instance.emitEvent({
           time: new Date().getTime(),
-          customInfo: {
-            url: window.location.href,
-            sourceUrl:
-              nodeName === 'LINK'
-                ? (target as HTMLLinkElement).href
-                : (
-                    target as
-                      | HTMLImageElement
-                      | HTMLVideoElement
-                      | HTMLAudioElement
-                      | HTMLScriptElement
-                  ).src,
-            nodeName,
-          },
+          url: window.location.href,
+          message: `${
+            nodeName === 'LINK'
+              ? (target as HTMLLinkElement).href
+              : (
+                  target as
+                    | HTMLImageElement
+                    | HTMLVideoElement
+                    | HTMLAudioElement
+                    | HTMLScriptElement
+                ).src
+          }#${nodeName}`,
         })
       }
     },

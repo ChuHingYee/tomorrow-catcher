@@ -3,9 +3,13 @@ import type { Tomorrow } from '@tomorrow-catcher/client'
 
 export interface OriginLog {
   time: number
-  customInfo: {
+  customInfo?: {
     [key: string]: any
   }
+  type?: 'network' | 'lag' | 'sourceLoad' | 'unhandledrejection'
+  url?: string
+  message?: string
+  stack?: string
   trace?: StackTrace
 }
 

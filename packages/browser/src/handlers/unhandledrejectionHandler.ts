@@ -7,12 +7,10 @@ export function initOnUnhandledrejectionHandler(
     const { reason } = event
     instance.emitEvent({
       time: new Date().getTime(),
-      customInfo: {
-        url: window.location.href,
-        message: reason.message,
-        stack: reason.stack,
-        type: 'unhandledrejection',
-      },
+      url: window.location.href,
+      message: reason.message,
+      stack: reason.stack,
+      type: 'unhandledrejection',
     })
   })
 }
