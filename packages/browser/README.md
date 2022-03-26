@@ -51,7 +51,7 @@ the log upload api url.
 
 ### `handlersList`
 
-Type: `'error' | 'unhandledrejection' | 'fetch' | 'xhr' | 'sourceLoad'[]`<br>
+Type: `'error' | 'unhandledrejection' | 'fetch' | 'xhr' | 'sourceLoad' | 'lag'[]`<br>
 Default: `[]`
 
 the errors handler options

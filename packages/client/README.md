@@ -47,7 +47,7 @@ the log upload api url.
 
 ### `systemInfo`
 
-Type: `{platform:string,userAgent:string,language:string,baseVersion:string,sdkVersion:string}`<br>
+Type: `{platform:string,userAgent:string,language:string,connection:{effectiveType:string,type:NetworkInformation['type']}baseVersion:string,sdkVersion:string}`<br>
 Default: `null`
 
 the base'SDK system info

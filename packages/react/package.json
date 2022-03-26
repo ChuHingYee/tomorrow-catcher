@@ -1,6 +1,6 @@
 {
   "name": "@tomorrow-catcher/react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -23,7 +23,7 @@
     }
   ],
   "dependencies": {
-    "@tomorrow-catcher/browser": "workspace:^1.0.3",
+    "@tomorrow-catcher/browser": "workspace:^1.1.0",
     "@types/react": "^17.0.38",
     "react": "^17.0.2"
   },

@@ -1,5 +1,23 @@
 # @tomorrow-catcher/browser
 
+## 1.1.0
+
+### Minor Changes
+
+#### Features
+
+- feat: format error (c6cf3fd)
+- feat: add lag-handler (671493a)
+
+#### Refactors
+
+- refactor: refactor handlers (9bfac72)
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @tomorrow-catcher/client@1.0.1
+
 ## 1.0.3
 
 ### Patch Changes
