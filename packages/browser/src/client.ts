@@ -17,8 +17,14 @@ class TomorrowBrowser {
   _stackHasContext: boolean
   private static instance: TomorrowBrowser
   constructor(config: BrowserConfig) {
-    const { handlersList, sdkVersion, trackDepth, stackHasContext, ...rest } =
-      config
+    const {
+      handlersList,
+      handlersOpts,
+      sdkVersion,
+      trackDepth,
+      stackHasContext,
+      ...rest
+    } = config
     const navigator = window.navigator
     this._tomorrow = new Tomorrow({
       ...rest,
@@ -42,7 +48,7 @@ class TomorrowBrowser {
     this._trackDepth = trackDepth || 0
     this._stackHasContext = stackHasContext || false
     if (handlersList && handlersList.length > 0) {
-      initHandlers(this, handlersList)
+      initHandlers(this, handlersList, handlersOpts)
     }
     if (!TomorrowBrowser.instance) {
       TomorrowBrowser.instance = this

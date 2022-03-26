@@ -32,6 +32,11 @@ export type Handlers =
   | 'sourceLoad'
   | 'lag'
 
+export interface LagHandlerOpts {
+  threshold: number
+  second: number
+}
+
 export interface BrowserConfig {
   key: string
   expireDate: number
@@ -40,4 +45,7 @@ export interface BrowserConfig {
   trackDepth?: number
   stackHasContext?: boolean
   handlersList?: Handlers[]
+  handlersOpts?: {
+    lag?: LagHandlerOpts
+  }
 }

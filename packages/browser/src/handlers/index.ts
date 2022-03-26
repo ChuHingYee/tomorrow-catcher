@@ -5,11 +5,12 @@ import { initXMLHandler } from './xmlHandler'
 import { initSourceLoadHandler } from './sourceLoadHandler'
 import { initLagHandler } from './lagHandler'
 import type { TomorrowBrowser } from '../client'
-import type { Handlers } from '../../types/client'
+import type { Handlers, BrowserConfig } from '../../types/client'
 
 export function initHandlers(
   instance: TomorrowBrowser,
-  handlersList: Handlers[]
+  handlersList: Handlers[],
+  handlersOpts: BrowserConfig['handlersOpts']
 ) {
   handlersList.forEach((type) => {
     switch (type) {
@@ -29,7 +30,7 @@ export function initHandlers(
         initSourceLoadHandler(instance)
         break
       case 'lag':
-        initLagHandler(instance)
+        initLagHandler(instance, handlersOpts?.lag)
         break
       default:
         // eslint-disable-next-line no-console
