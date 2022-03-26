@@ -131,7 +131,7 @@ importers:
 
   packages/react:
     specifiers:
-      '@tomorrow-catcher/browser': workspace:^1.0.1
+      '@tomorrow-catcher/browser': workspace:^1.0.3
       '@types/react': ^17.0.38
       react: ^17.0.2
     dependencies:
@@ -141,7 +141,7 @@ importers:
 
   packages/vue:
     specifiers:
-      '@tomorrow-catcher/browser': workspace:^1.0.1
+      '@tomorrow-catcher/browser': workspace:^1.0.3
       vue: ^3.2.28
       vue-demi: ^0.12.1
       vue-router: ^4.0.12

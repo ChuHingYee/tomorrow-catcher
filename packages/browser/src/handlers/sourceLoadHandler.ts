@@ -1,17 +1,32 @@
 import type { TomorrowBrowser } from '../client'
-
-export function sourceLoadHandler(instance: TomorrowBrowser): void {
+const sourcesMap = {
+  LINK: true,
+  IMG: true,
+  VIDEO: true,
+  AUDIO: true,
+  SCRIPT: true,
+}
+export function initSourceLoadHandler(instance: TomorrowBrowser): void {
   window.addEventListener(
     'error',
     (event) => {
-      const target = event.target as any
-      const nodeName = (target && target.nodeName) || ''
-      if (['LINK', 'SCRIPT', 'IMG'].indexOf(nodeName) !== -1) {
+      const target = event.target || event.srcElement
+      const nodeName = (target as Node).nodeName || ''
+      if (sourcesMap[nodeName]) {
         instance.emitEvent({
           time: new Date().getTime(),
           customInfo: {
             url: window.location.href,
-            sourceUrl: (target as HTMLSourceElement).src,
+            sourceUrl:
+              nodeName === 'LINK'
+                ? (target as HTMLLinkElement).href
+                : (
+                    target as
+                      | HTMLImageElement
+                      | HTMLVideoElement
+                      | HTMLAudioElement
+                      | HTMLScriptElement
+                  ).src,
             nodeName,
           },
         })

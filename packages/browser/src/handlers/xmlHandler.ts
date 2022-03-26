@@ -33,7 +33,6 @@ export function initXMLHandler(instance: TomorrowBrowser): void {
                 type: 'network',
                 msg: `${requestRecord.method}-${requestRecord.url}`,
               },
-              trace: undefined,
             }
             instance.emitEvent(customLog)
           } else {

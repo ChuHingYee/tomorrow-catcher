@@ -23,7 +23,6 @@ export function initFetchHandler(instance: TomorrowBrowser): void {
           type: 'network',
           msg: `${requestRecord.method}-${requestRecord.url}`,
         },
-        trace: undefined,
       }
       oldFetch(input, opts).then(
         (res) => {

@@ -1,12 +1,11 @@
 import type { TomorrowBrowser } from '../client'
 
-export function initOnErrorHandler(instance: TomorrowBrowser): void {
-  const _oldErrorHandler = window.onerror
-  window.onerror = function (error: any) {
-    instance.emitTraceEvent(error)
-    if (_oldErrorHandler) {
-      return _oldErrorHandler.apply(this, error)
+export function initErrorHandler(instance: TomorrowBrowser): void {
+  window.addEventListener('error', (event) => {
+    const { error } = event
+    const target = event.target || event.srcElement
+    if (target && !(target as Node).nodeName) {
+      instance.emitTraceEvent(error)
     }
-    return false
-  }
+  })
 }

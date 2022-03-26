@@ -3,12 +3,16 @@ import type { TomorrowBrowser } from '../client'
 export function initOnUnhandledrejectionHandler(
   instance: TomorrowBrowser
 ): void {
-  const _oldUnhandledrejectionHandler = window.onunhandledrejection
-  window.onunhandledrejection = (error: any) => {
-    instance.emitTraceEvent(error)
-    if (_oldUnhandledrejectionHandler) {
-      return _oldUnhandledrejectionHandler.apply(window, error)
-    }
-    return false
-  }
+  window.addEventListener('unhandledrejection', (event) => {
+    const { reason } = event
+    instance.emitEvent({
+      time: new Date().getTime(),
+      customInfo: {
+        url: window.location.href,
+        message: reason.message,
+        stack: reason.stack,
+        type: 'unhandledrejection',
+      },
+    })
+  })
 }
