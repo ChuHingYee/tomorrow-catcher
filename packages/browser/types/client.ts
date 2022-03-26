@@ -26,6 +26,7 @@ export type Handlers =
   | 'fetch'
   | 'xhr'
   | 'sourceLoad'
+  | 'lag'
 
 export interface BrowserConfig {
   key: string

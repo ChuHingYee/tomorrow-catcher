@@ -3,6 +3,7 @@ import { initOnUnhandledrejectionHandler } from './unhandledrejectionHandler'
 import { initFetchHandler } from './fetchHandler'
 import { initXMLHandler } from './xmlHandler'
 import { initSourceLoadHandler } from './sourceLoadHandler'
+import { initLagHandler } from './lagHandler'
 import type { TomorrowBrowser } from '../client'
 import type { Handlers } from '../../types/client'
 
@@ -26,6 +27,9 @@ export function initHandlers(
         break
       case 'sourceLoad':
         initSourceLoadHandler(instance)
+        break
+      case 'lag':
+        initLagHandler(instance)
         break
       default:
         // eslint-disable-next-line no-console
