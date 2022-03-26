@@ -70,10 +70,10 @@ ReactDOM.render(
 
 ### ErrorBoundary 组件 属性
 
-| 属性           |            说明            |               类型 | 可选值 | 默认值 |
-| -------------- | :------------------------: | -----------------: | -----: | -----: |
-| errorComponent |       自定义错误组件       | React.ReactElement |      - |      - |
-| onMount        |   组件 onMount 生命周期    |           function |      - |      - |
-| onUnmount      |  组件 onUnmount 生命周期   |           function |      - |      - |
-| onError        |  捕获错误时自定义触发方法  |           function |      - |      - |
-| beforeUpload   | 自定义日志 customInfo 属性 |           function |      - |      - |
+| 属性           |            说明            |                 类型 | 可选值 | 默认值 |
+| -------------- | :------------------------: | -------------------: | -----: | -----: |
+| errorComponent |       自定义错误组件       | `React.ReactElement` |      - |      - |
+| onMount        |   组件 onMount 生命周期    |           `function` |      - |      - |
+| onUnmount      |  组件 onUnmount 生命周期   |           `function` |      - |      - |
+| onError        |  捕获错误时自定义触发方法  |           `function` |      - |      - |
+| beforeUpload   | 自定义日志 customInfo 属性 |           `function` |      - |      - |

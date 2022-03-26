@@ -34,10 +34,17 @@ init({
 
 ## SDK 属性
 
-| 属性         |                                         说明                                         |   类型 |                                        可选值 |                默认值 |
-| ------------ | :----------------------------------------------------------------------------------: | -----: | --------------------------------------------: | --------------------: |
-| key          |                                     应用对应 key                                     | string |                                             - |                     - |
-| expireDate   |                日志过期时间，单位为天，如果为 0 时捕获错误后马上上传                 | number |                                             - |                     - |
-| reportUrl    | 日志上传 api 地址，请求方法为 post(resquest body:{appkey:string,list:TomorrowLog[]}) | string |                                             - |                     - |
-| handlersList |                                    错误捕获类型：                                    |  array | error/unhandledrejection/fetch/xhr/sourceLoad |                    [] |
-| sdkVersion   |                                       SDK 信息                                       | string |                                             - | 当前 sdk 版本 version |
+| 属性         |                                         说明                                         |           类型 |                                          可选值 |                默认值 |
+| ------------ | :----------------------------------------------------------------------------------: | -------------: | ----------------------------------------------: | --------------------: |
+| key          |                                     应用对应 key                                     |       `string` |                                               - |                     - |
+| expireDate   |                日志过期时间，单位为天，如果为 0 时捕获错误后马上上传                 |       `number` |                                               - |                     - |
+| reportUrl    | 日志上传 api 地址，请求方法为 post(resquest body:{appkey:string,list:TomorrowLog[]}) |       `string` |                                               - |                     - |
+| handlersList |                                    错误捕获类型：                                    |        `array` | `error/unhandledrejection/fetch/xhr/sourceLoad` |                  `[]` |
+| handlersOpts |                                 错误捕获处理器参数：                                 | `HandlersOpts` |                                               - |                `null` |
+| sdkVersion   |                                       SDK 信息                                       |       `string` |                                               - | 当前 sdk 版本 version |
+
+### HandlersOpts 属性
+
+| 属性 |     说明     |                               类型 | 可选值 |                    默认值 |
+| ---- | :----------: | ---------------------------------: | -----: | ------------------------: |
+| lag  | FPS 监测参数 | `{threshold:number,second:number}` |      - | `{threshold:20,second:3}` |

@@ -93,8 +93,8 @@ app.use(store).use(router).mount("#app");
 
 [继承@tomorrow-catcher/brower 所有属性](./browser#sdk-属性)
 
-| 属性         |            说明            |     类型 | 可选值 | 默认值 |
-| ------------ | :------------------------: | -------: | -----: | -----: |
-| vue          |          vue 实例          |        - |      - |      - |
-| beforeUpload | 自定义日志 customInfo 属性 | function |      - |      - |
-| router       |        router 实例         |        - |      - |      - |
+| 属性         |            说明            |       类型 | 可选值 | 默认值 |
+| ------------ | :------------------------: | ---------: | -----: | -----: |
+| vue          |          vue 实例          |          - |      - |      - |
+| beforeUpload | 自定义日志 customInfo 属性 | `function` |      - |      - |
+| router       |        router 实例         |          - |      - |      - |
