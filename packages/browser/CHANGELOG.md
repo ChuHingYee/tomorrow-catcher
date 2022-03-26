@@ -1,5 +1,13 @@
 # @tomorrow-catcher/browser
 
+## 1.1.1
+
+### Patch Changes
+
+#### Features
+
+- feat: add handlers options (32b9b25)
+
 ## 1.1.0
 
 ### Minor Changes

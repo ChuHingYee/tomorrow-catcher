@@ -45,7 +45,7 @@ the log expire date,the log will upload when the expireDate was setting 0.one st
 ### `reportUrl`
 
 Type: `string`<br>
-Default: ``
+Default: `''`
 
 the log upload api url.
 
@@ -53,6 +53,13 @@ the log upload api url.
 
 Type: `'error' | 'unhandledrejection' | 'fetch' | 'xhr' | 'sourceLoad' | 'lag'[]`<br>
 Default: `[]`
+
+the errors handler list
+
+### `handlersOpts`
+
+Type: `{lag:{threshold: number,second: number}}`<br>
+Default: `null`
 
 the errors handler options
 
