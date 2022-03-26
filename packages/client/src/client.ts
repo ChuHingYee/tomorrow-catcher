@@ -13,6 +13,7 @@ export class Tomorrow {
       platform: systemInfo.platform,
       userAgent: systemInfo.userAgent,
       language: systemInfo.language,
+      connection: systemInfo.connection,
       baseVersion: systemInfo.baseVersion,
       sdkVersion: systemInfo.sdkVersion,
     }

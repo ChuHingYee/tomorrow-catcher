@@ -19,12 +19,17 @@ class TomorrowBrowser {
   constructor(config: BrowserConfig) {
     const { handlersList, sdkVersion, trackDepth, stackHasContext, ...rest } =
       config
+    const navigator = window.navigator
     this._tomorrow = new Tomorrow({
       ...rest,
       systemInfo: {
-        platform: window.navigator.platform,
-        userAgent: window.navigator.userAgent,
-        language: window.navigator.language,
+        platform: navigator.platform,
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        connection: {
+          effectiveType: (navigator.connection as any)?.effectiveType || '-',
+          type: navigator.connection.type || '-',
+        },
         baseVersion: _version,
         sdkVersion: sdkVersion || _version,
       },
