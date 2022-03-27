@@ -1,5 +1,13 @@
 # @tomorrow-catcher/browser
 
+## 1.1.2
+
+### Patch Changes
+
+#### Bugfixes
+
+- fix: fix sourceLoadHandler without upload type (f3aaa14)
+
 ## 1.1.1
 
 ### Patch Changes

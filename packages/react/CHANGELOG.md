@@ -1,5 +1,12 @@
 # @tomorrow-catcher/react
 
+## 1.0.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @tomorrow-catcher/browser@1.1.2
+
 ## 1.0.6
 
 ### Patch Changes
