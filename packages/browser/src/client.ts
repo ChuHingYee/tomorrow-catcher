@@ -98,12 +98,14 @@ class TomorrowBrowser {
       time: _time,
       customInfo: customInfo || {},
       trace,
+      type: 'unknow',
     }
     this.emitEvent(log)
   }
   emitEvent(log: OriginLog): void {
     const tomorrowLog: TomorrowLog = {
       ...log,
+      href: window.location.href,
       expireDate: this._tomorrow._expireDate * 86400000 + log.time,
       systemInfo: this._tomorrow._systemInfo,
     }

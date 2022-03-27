@@ -32,7 +32,6 @@ export function initLagHandler(
       if (records.length > second) {
         instance.emitEvent({
           time: new Date().getTime(),
-          url: window.location.href,
           type: 'lag',
         })
         records = []

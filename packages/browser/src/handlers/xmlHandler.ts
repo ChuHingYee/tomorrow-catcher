@@ -31,7 +31,6 @@ export function initXMLHandler(instance: TomorrowBrowser): void {
               time: _time,
               type: 'network',
               message: `${requestRecord.method}-${requestRecord.url}`,
-              url: window.location.href,
             }
             instance.emitEvent(customLog)
           } else {

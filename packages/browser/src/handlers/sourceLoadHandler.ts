@@ -15,7 +15,6 @@ export function initSourceLoadHandler(instance: TomorrowBrowser): void {
       if (sourcesMap[nodeName]) {
         instance.emitEvent({
           time: new Date().getTime(),
-          url: window.location.href,
           message: `${
             nodeName === 'LINK'
               ? (target as HTMLLinkElement).href

@@ -6,8 +6,7 @@ export interface OriginLog {
   customInfo?: {
     [key: string]: any
   }
-  type?: 'network' | 'lag' | 'sourceLoad' | 'unhandledrejection'
-  url?: string
+  type: 'network' | 'lag' | 'sourceLoad' | 'unhandledrejection' | 'unknow'
   message?: string
   stack?: string
   trace?: StackTrace
@@ -16,6 +15,7 @@ export interface OriginLog {
 export interface TomorrowLog extends OriginLog {
   systemInfo: Tomorrow['_systemInfo']
   expireDate: number
+  href: string
   id?: number
 }
 
