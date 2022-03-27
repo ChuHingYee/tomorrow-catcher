@@ -27,6 +27,7 @@ export function initSourceLoadHandler(instance: TomorrowBrowser): void {
                     | HTMLScriptElement
                 ).src
           }#${nodeName}`,
+          type: 'sourceLoad',
         })
       }
     },
