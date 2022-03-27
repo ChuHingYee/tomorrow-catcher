@@ -1,5 +1,13 @@
 # @tomorrow-catcher/browser
 
+## 1.1.3
+
+### Patch Changes
+
+#### Bugfixes
+
+- fix: format error log (ab1266e)
+
 ## 1.1.2
 
 ### Patch Changes
