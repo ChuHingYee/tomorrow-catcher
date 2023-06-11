@@ -6,6 +6,7 @@ node_modules
 .pnpm-debug.log*
 packages/*/dist
 docs/.vitepress/dist
+docs/.vitepress/cache
 coverage
 
 # System

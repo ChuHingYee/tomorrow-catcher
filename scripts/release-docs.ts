@@ -1,6 +1,6 @@
 import chalk from 'chalk'
 import { join } from 'path'
-import execa from 'execa'
+import { execa } from 'execa'
 import { docsRoot } from '../build/paths'
 const filesPath = join(docsRoot, '.vitepress', 'dist')
 const { log } = console

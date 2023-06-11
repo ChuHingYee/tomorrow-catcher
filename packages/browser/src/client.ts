@@ -33,8 +33,9 @@ class TomorrowBrowser {
         userAgent: navigator.userAgent,
         language: navigator.language,
         connection: {
-          effectiveType: (navigator.connection as any)?.effectiveType || '-',
-          type: navigator.connection.type || '-',
+          effectiveType:
+            (navigator as any).connection?.effectiveType || 'unknow',
+          type: (navigator as any).connection.type || 'unknow',
         },
         baseVersion: _version,
         sdkVersion: sdkVersion || _version,

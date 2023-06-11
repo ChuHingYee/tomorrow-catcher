@@ -4,7 +4,6 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import dts from 'rollup-plugin-dts'
 import esbuild from 'rollup-plugin-esbuild'
 import commonjs from '@rollup/plugin-commonjs'
-import { terser } from 'rollup-plugin-terser'
 import { babel } from '@rollup/plugin-babel'
 import json from '@rollup/plugin-json'
 import type { RollupOptions } from 'rollup'
@@ -16,7 +15,6 @@ const resolve = (p) => path.resolve(packageDir, p)
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require(path.resolve(packageDir, 'package.json'))
 const { name, version } = pkg
-const isDev = process.env.NODE_ENV !== 'production'
 
 interface PkgRollup {
   type: 'iife' | 'esm' | 'type'
@@ -26,21 +24,23 @@ interface PkgRollup {
 const babelPlugins = [
   babel({
     babelHelpers: 'runtime',
-    extensions: ['.js', '.mjs', '.html', '.ts'],
+    extensions: ['.js', '.jsx', '.mjs', '.html', '.ts', '.tsx'],
   }),
 ]
-
-const terserPlugin = !isDev && terser({ toplevel: true })
 
 const basePlugins = [
   json(),
   nodeResolve({
-    extensions: ['.mjs', '.js', '.json', '.ts'],
+    extensions: ['.mjs', '.js', '.json', '.ts', '.tsx'],
   }),
   commonjs(),
   esbuild({
     sourceMap: true,
     target: 'es2018',
+    jsx: 'transform', // default, or 'preserve'
+    jsxFactory: 'React.createElement',
+    jsxFragment: 'React.Fragment',
+    minify: process.env.NODE_ENV === 'production',
   }),
 ]
 const banner = `/*! Tomorrow ${name}-v${version} */\n`
@@ -67,7 +67,7 @@ const generateGlobalConfig = function (pkg, name: string): RollupOptions {
       file: resolve(pkg.main),
       name,
     },
-    plugins: [...basePlugins, ...babelPlugins, terserPlugin],
+    plugins: [...basePlugins, ...babelPlugins],
   }
 }
 
@@ -80,7 +80,7 @@ const generateESMConfig = function (pkg): RollupOptions {
       sourcemap: true,
       banner,
     },
-    plugins: [...basePlugins, terserPlugin],
+    plugins: [...basePlugins],
     external: [
       ...Object.keys(pkg.dependencies || {}),
       ...Object.keys(pkg.peerDependencies || {}),

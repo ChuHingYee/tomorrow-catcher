@@ -3,7 +3,7 @@ import { join } from 'path'
 import { existsSync, readFileSync, writeFileSync } from 'fs'
 import parser from 'conventional-commits-parser'
 import chalk from 'chalk'
-import execa from 'execa'
+import { execa } from 'execa'
 import yargs from 'yargs-parser'
 import { pkgRoot } from '../build/paths'
 /**

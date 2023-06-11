@@ -1,5 +1,5 @@
 import { join } from 'path'
-import execa from 'execa'
+import { execa } from 'execa'
 import { existsSync } from 'fs'
 import chalk from 'chalk'
 import { pkgRoot } from '../build/paths'
@@ -12,13 +12,21 @@ const clean = async function (
   packageName: string,
   shortName: string
 ) {
-  log(chalk`{cyan Cleaning ${packageName}} from {grey packages/${shortName}}\n`)
+  log(
+    `${chalk.blueBright(`Cleaning ${packageName}`)} from ${chalk.gray(
+      `packages/${shortName}`
+    )}\n`
+  )
   await execa('rimraf', [join(cwd, 'es')], { stdio: 'inherit' })
   await execa('rimraf', [join(cwd, 'lib')], { stdio: 'inherit' })
 }
 
 const build = async function (packageName: string, shortName: string) {
-  log(chalk`{cyan Building ${packageName}} from {grey packages/${shortName}}\n`)
+  log(
+    `${chalk.blueBright(`Building ${packageName}`)} from ${chalk.gray(
+      `packages/${shortName}`
+    )}\n`
+  )
   await execa(
     'rollup',
     [
